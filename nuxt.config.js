@@ -8,7 +8,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'a test page to integrate vite+nuxt+quasar' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -31,6 +31,8 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://www.npmjs.com/package/nuxt-compress
     'nuxt-compress',
+
+    'nuxt-vite'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -47,6 +49,16 @@ export default {
       },
     ],
   ],
+
+  vite: {
+    build: true,
+    /* options for vite */
+    // ssr: true // enable unstable server-side rendering for development (false by default)
+    // experimentWarning: false // hide experimental warning message (disabled by default for tests)
+    vue: {
+      /* options for vite-plugin-vue2 */
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
